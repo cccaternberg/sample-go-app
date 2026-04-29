@@ -1,6 +1,6 @@
-FROM golang:1.20 AS builder
+FROM golang:1.22-alpine AS builder
 
-RUN apt-get update && apt-get install -y git
+RUN apk add --no-cache git bash
 
 WORKDIR /app
 COPY go.mod go.sum ./
